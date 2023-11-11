@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from stawberryDeseaseClassifier.utils import logger
+from src.stawberryDeseaseClassifier.utils import logger
  
 import json
 import joblib
