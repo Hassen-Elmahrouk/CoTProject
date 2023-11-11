@@ -101,13 +101,13 @@ def register_dataset():
     # Blob name for the annotations file
     json_blob_name = "strawberry-disease_detection/_annotations.coco.json"
     # Local path where the annotations file will be downloaded
-    local_json_file = "/home/hous/Desktop/TEST/train/_annotations.coco.json"
+    local_json_file = "/app/data/train/_annotations.coco.json"
 
     # Blob 'directory' name for the images
     # In Azure, directories are virtual, represented in the blob name
     image_root_blob_name = "strawberry-disease_detection/"
     # Local directory where the images will be downloaded
-    local_image_root = "/home/hous/Desktop/TEST/train"
+    local_image_root = "/app/data/train"
     """
     # Download annotations and images from Azure
     download_from_azure_blob(json_blob_name, local_json_file, "data")
@@ -128,13 +128,13 @@ def register_valid_dataset():
     # Blob name for the annotations file
     json_blob_name = "strawberry-disease_detection/_annotations.coco.json"
     # Local path where the annotations file will be downloaded
-    local_json_file = "/home/hous/Desktop/TEST/valid"
+    local_json_file = "/app/data/valid/_annotations.coco.json"
 
     # Blob 'directory' name for the images
     # In Azure, directories are virtual, represented in the blob name
     image_root_blob_name = "strawberry-disease_detection/"
     # Local directory where the images will be downloaded
-    local_image_root = "/home/hous/Desktop/TEST/valid"
+    local_image_root = "/app/data/valid"
     """
     # Download annotations and images from Azure
     download_from_azure_blob(json_blob_name, local_json_file, "data")
@@ -184,7 +184,7 @@ def main():
     check_cuda_version()
 
     # Replace local file paths with paths to Azure blobs
-    file_path = '/home/hous/Desktop/TEST/train/_annotations.coco.json'
+    file_path = '/app/data/train/_annotations.coco.json'
     """"
     if is_coco_format(file_path):
         logger.info("File is in COCO format")
@@ -195,7 +195,7 @@ def main():
     register_dataset()
     register_valid_dataset()
     cfg = configure_model()
-    output_dir = "/home/hous/Desktop/TEST/output_strawberry_test"
+    output_dir = "/app/data/output_strawberry_test"
     os.makedirs(output_dir, exist_ok=True)
     cfg.OUTPUT_DIR = output_dir
 
