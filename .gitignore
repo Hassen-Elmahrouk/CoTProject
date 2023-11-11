@@ -95,3 +95,5 @@ azuredeploy.json
 train/
 output_strawberry/
 
+/train
+/output_strawberry
