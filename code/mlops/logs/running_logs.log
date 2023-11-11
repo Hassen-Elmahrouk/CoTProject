@@ -46,3 +46,85 @@ x==========x]
 [2023-11-11 15:56:22,971: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
 [2023-11-11 15:56:22,974: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/prepare_base_model]
 [2023-11-11 15:56:34,842: WARNING : saving_utils : Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-11-11 16:11:16,874: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 16:11:16,881: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 16:11:16,885: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 16:11:16,900: INFO : common : created directory at: \deletable\apps\CoTProject\code\mlops\artifacts\training]
+[2023-11-11 16:28:23,258: INFO : stage_03_model_training : *******************]
+[2023-11-11 16:28:23,258: INFO : stage_03_model_training : >>>>>> stage Training started <<<<<<]
+[2023-11-11 16:28:23,263: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 16:28:23,268: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 16:28:23,269: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 16:28:23,270: INFO : common : created directory at: \deletable\apps\CoTProject\code\mlops\artifacts\training]
+[2023-11-11 16:41:09,063: INFO : stage_03_model_training : >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-11-11 17:03:03,181: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 17:03:03,195: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 17:03:03,200: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 17:08:35,732: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 17:08:35,737: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 17:08:35,740: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 17:10:30,947: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 17:10:30,952: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 17:10:30,954: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 17:15:38,424: INFO : common : json file saved at: scores.json]
+[2023-11-11 17:15:50,765: WARNING : save : Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2023-11-11 17:15:53,148: INFO : builder_impl : Assets written to: C:\Users\Hasse\AppData\Local\Temp\tmpph9g0el3\model\data\model\assets]
+[2023-11-11 17:21:32,317: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 17:21:32,321: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 17:21:32,323: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 17:27:17,336: INFO : common : json file saved at: scores.json]
+[2023-11-11 17:27:23,191: WARNING : save : Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2023-11-11 17:27:25,200: INFO : builder_impl : Assets written to: C:\Users\Hasse\AppData\Local\Temp\tmpy9neuyq1\model\data\model\assets]
+[2023-11-11 19:47:22,833: INFO : stage_04_model_evaluation : *******************]
+[2023-11-11 19:47:22,834: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage started <<<<<<]
+[2023-11-11 19:47:22,840: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 19:47:22,842: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 19:47:22,843: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 19:47:22,848: ERROR : stage_04_model_evaluation : No file or directory found at artifacts/training/model.h5]
+Traceback (most recent call last):
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\pipeline\stage_04_model_evaluation.py", line 26, in <module>
+    obj.main()
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\pipeline\stage_04_model_evaluation.py", line 16, in main
+    evaluation.evaluation()
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\components\model_evaluation_mlfow.py", line 43, in evaluation
+    self.model = self.load_model(self.config.path_of_model)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\components\model_evaluation_mlfow.py", line 40, in load_model
+    return tf.keras.models.load_model(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifacts/training/model.h5
+[2023-11-11 19:50:16,966: INFO : stage_04_model_evaluation : *******************]
+[2023-11-11 19:50:16,967: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage started <<<<<<]
+[2023-11-11 19:50:16,970: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 19:50:16,972: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 19:50:16,973: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 19:54:23,651: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 19:54:23,652: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 19:54:23,653: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2023-11-11 20:07:25,573: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 20:07:25,590: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 20:07:25,597: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 20:11:04,197: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 20:11:17,569: WARNING : save : Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 14). These functions will not be directly callable after loading.]
+[2023-11-11 20:11:18,820: INFO : builder_impl : Assets written to: C:\Users\Hasse\AppData\Local\Temp\tmpcunkm2km\model\data\model\assets]
+[2023-11-11 20:18:01,198: INFO : stage_04_model_evaluation : *******************]
+[2023-11-11 20:18:01,199: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage started <<<<<<]
+[2023-11-11 20:18:01,202: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 20:18:01,204: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 20:18:01,205: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 20:20:48,087: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 20:20:48,089: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 20:20:48,089: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
