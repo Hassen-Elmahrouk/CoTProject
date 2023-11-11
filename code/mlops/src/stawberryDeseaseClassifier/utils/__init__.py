@@ -5,7 +5,7 @@ import sys
 import logging
 
 logging_str ="[%(asctime)s: %(levelname)s : %(module)s : %(message)s]"
-log_dir="code\mlops\logs"
+log_dir="code\mlops\logs" 
 log_filepath = os.path.join(log_dir,'running_logs.log')
 os.makedirs(log_dir , exist_ok =True)
 logging.basicConfig(
@@ -19,4 +19,4 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger("stawberryDeseaseClassifier")
-logger.info("HELLO")
+logger.info(".........")
