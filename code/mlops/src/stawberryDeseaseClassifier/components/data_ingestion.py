@@ -1,7 +1,7 @@
 import os
 import zipfile
 import gdown
-from src.stawberryDeseaseClassifier import logger
+from src.stawberryDeseaseClassifier.utils import logger
 from src.stawberryDeseaseClassifier.utils.common import get_size
 from src.stawberryDeseaseClassifier.entity.config_entity import (DataIngestionConfig)
 

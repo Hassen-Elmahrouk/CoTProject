@@ -1,3 +1,48 @@
-[2023-11-07 19:51:08,059: INFO : __init__ : HELLO]
-[2023-11-11 11:35:06,007: INFO : __init__ : HELLO]
-[2023-11-11 11:57:32,384: INFO : __init__ : .........]
+
+[2023-11-11 15:09:22,045: INFO : __init__ : correct place]
+[2023-11-11 15:10:45,134: INFO : __init__ : correct place]
+[2023-11-11 15:19:28,195: INFO : stage_01_data : >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-11-11 15:19:28,196: ERROR : stage_01_data : [Errno 2] No such file or directory: 'config\\config.yaml']
+Traceback (most recent call last):
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\pipeline\stage_01_data.py", line 25, in <module>
+    obj.main()
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\pipeline\stage_01_data.py", line 13, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\config\configuration.py", line 16, in __init__
+    self.config = read_yaml(config_filepath)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\utils\common.py", line 42, in read_yaml
+    raise e
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\utils\common.py", line 35, in read_yaml
+    with open(path_to_yaml) as yaml_file:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'config\\config.yaml'
+[2023-11-11 15:21:15,185: INFO : stage_01_data : >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-11-11 15:21:15,189: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 15:21:15,194: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 15:21:15,195: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 15:21:15,196: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion]
+[2023-11-11 15:21:15,196: INFO : data_ingestion : Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-11-11 15:21:28,095: INFO : data_ingestion : Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-11-11 15:21:29,404: INFO : stage_01_data : >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-11-11 15:35:55,348: INFO : stage_01_data : >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-11-11 15:35:55,351: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 15:35:55,352: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 15:35:55,353: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 15:35:55,353: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion]
+[2023-11-11 15:35:55,354: INFO : data_ingestion : Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion/data.zip]
+[2023-11-11 15:36:09,059: INFO : data_ingestion : Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion/data.zip]
+[2023-11-11 15:36:10,034: INFO : stage_01_data : >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-11-11 15:56:22,950: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 15:56:22,958: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 15:56:22,971: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 15:56:22,974: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/prepare_base_model]
+[2023-11-11 15:56:34,842: WARNING : saving_utils : Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]

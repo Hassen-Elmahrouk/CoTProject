@@ -1,6 +1,6 @@
 from src.stawberryDeseaseClassifier.config.configuration import ConfigurationManager
 from src.stawberryDeseaseClassifier.components.data_ingestion import DataIngestion
-from src.stawberryDeseaseClassifier import logger
+from src.stawberryDeseaseClassifier.utils import logger
 
 STAGE_NAME = "Data Ingestion stage"
 
