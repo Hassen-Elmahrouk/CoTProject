@@ -21,3 +21,4 @@
 [2023-11-07 23:08:48,235: INFO : common : created directory at: artifacts/data_ingestion]
 [2023-11-07 23:08:48,237: INFO : 3172177572 : Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
 [2023-11-07 23:10:50,065: INFO : 3172177572 : Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-11-11 11:55:44,573: INFO : __init__ : HELLO]

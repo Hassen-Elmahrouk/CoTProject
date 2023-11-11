@@ -19,4 +19,3 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger("stawberryDeseaseClassifier")
-logger.info(".........")
