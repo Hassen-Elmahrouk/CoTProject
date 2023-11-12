@@ -35,3 +35,21 @@ mlops (root)
 ├─ app.py                  # API serving the model
 │
 └─ template.py             # Project template creation script
+
+
+
+## Getting Started
+
+### Prerequisites
+- Python 3.x
+- pip (Python package installer)
+
+### Setting up the Virtual Environment
+1. Navigate to the project root directory in your terminal.
+
+2. Activate the virtual environment by running the following command:
+   ```bash
+   source mlopsEnv/bin/activate  # On Windows: mlopsEnv\Scripts\activate
+3. install requirements :
+    ```bash
+    pip install -r requirements.txt
