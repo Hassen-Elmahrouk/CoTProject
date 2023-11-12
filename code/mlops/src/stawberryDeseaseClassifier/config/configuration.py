@@ -6,7 +6,8 @@ from src.stawberryDeseaseClassifier.entity.config_entity import (DataIngestionCo
                                                 TrainingConfig,
                                                 EvaluationConfig)
 
-
+#configuration maanager is the classs responsible fot mapping cconfiguration/parameters to its specific component of the pipeline
+#the configuration can be found in  CONFIG_FILE_PATH, PARAMS_FILE_PATH
 class ConfigurationManager:
     def __init__(
         self,

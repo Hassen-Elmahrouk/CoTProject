@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from src.stawberryDeseaseClassifier.entity.config_entity import EvaluationConfig
 from src.stawberryDeseaseClassifier.utils.common import read_yaml, create_directories, save_json
 
-
+# this componet is responsible for model evaluation and exprement tracking with mlflow.
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
         self.config = config

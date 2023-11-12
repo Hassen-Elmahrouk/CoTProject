@@ -128,3 +128,163 @@ x==========x]
 [2023-11-11 20:20:48,089: INFO : stage_04_model_evaluation : >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2023-11-11 22:40:32,360: INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.101:8080]
+[2023-11-11 22:40:32,360: INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2023-11-11 22:40:47,163: ERROR : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:47] code 400, message Bad request version ('\x02h2\x08http/1.1\x00')]
+[2023-11-11 22:40:47,163: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:47] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Ö£öe<\x0dºó\x8aU\x916ÂÔ(ó*;»%Gáë,¬¨Ã\\\x9dAd' Nw\x82a8ù\x18ÀE\x8b- \x064&\x14\x93>?A\x0dÏá'¸?!på¬y±\x00 ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93êê\x00\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00[0m" 400 -]
+[2023-11-11 22:40:47,168: ERROR : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:47] code 400, message Bad request version ('|Æ1')]
+[2023-11-11 22:40:47,169: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:47] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03aÄ\x86E\x12~F¹Iµ\x8c°¬$?\x9860\x094ÂÊ¬0Ü[\x9e:¿Ã\x82ï |Æ1[0m" 400 -]
+[2023-11-11 22:40:49,102: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:49] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:40:49,301: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:40:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2023-11-11 22:41:03,208: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:41:03] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:41:03,518: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:41:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2023-11-11 22:41:34,582: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:41:34] "[31m[1mGET /predict HTTP/1.1[0m" 405 -]
+[2023-11-11 22:44:40,546: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:44:40] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:09,192: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:48:09] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:12,145: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:48:12] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:27,058: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:48:27] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:33,297: INFO : _internal : 192.168.1.101 - - [11/Nov/2023 22:48:33] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:36,753: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:48:36] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:40,473: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:48:40] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:48:47,072: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:48:47] "[31m[1mGET /predict HTTP/1.1[0m" 405 -]
+[2023-11-11 22:51:49,756: INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.101:8080]
+[2023-11-11 22:51:49,757: INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2023-11-11 22:51:57,440: ERROR : app : Exception on / [GET]]
+Traceback (most recent call last):
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\app.py", line 25, in home
+    return render_template('templates/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: templates/index.html
+[2023-11-11 22:51:57,454: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:51:57] "[35m[1mGET / HTTP/1.1[0m" 500 -]
+[2023-11-11 22:52:35,446: INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.101:8080]
+[2023-11-11 22:52:35,446: INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2023-11-11 22:52:40,361: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:52:40] "GET / HTTP/1.1" 200 -]
+[2023-11-11 22:52:54,754: ERROR : app : Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\src\stawberryDeseaseClassifier\pipeline\prediction.py", line 13, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\deletable\apps\CoTProject\code\mlops\mlopsEnv\Lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2023-11-11 22:52:54,769: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 22:52:54] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2023-11-11 23:01:20,888: INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.101:8080]
+[2023-11-11 23:01:20,889: INFO : _internal : [33mPress CTRL+C to quit[0m]
+[2023-11-11 23:01:44,718: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 23:01:44] "GET / HTTP/1.1" 200 -]
+[2023-11-11 23:01:55,430: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 23:01:55] "POST /predict HTTP/1.1" 200 -]
+[2023-11-11 23:06:51,621: INFO : main : >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-11-11 23:06:51,626: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 23:06:51,629: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 23:06:51,630: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 23:06:51,631: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion]
+[2023-11-11 23:06:51,631: INFO : data_ingestion : Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion/data.zip]
+[2023-11-11 23:07:51,874: INFO : data_ingestion : Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file /deletable/apps/CoTProject/code/mlops/artifacts/data_ingestion/data.zip]
+[2023-11-11 23:07:53,120: INFO : main : >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-11-11 23:07:53,120: INFO : main : *******************]
+[2023-11-11 23:07:53,120: INFO : main : >>>>>> stage Prepare base model started <<<<<<]
+[2023-11-11 23:07:53,123: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 23:07:53,125: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 23:07:53,126: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 23:07:53,126: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts/prepare_base_model]
+[2023-11-11 23:07:54,244: WARNING : saving_utils : Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-11-11 23:07:55,043: INFO : main : >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-11-11 23:07:55,044: INFO : main : *******************]
+[2023-11-11 23:07:55,044: INFO : main : >>>>>> stage Training started <<<<<<]
+[2023-11-11 23:07:55,047: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 23:07:55,050: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 23:07:55,050: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 23:07:55,060: INFO : common : created directory at: \deletable\apps\CoTProject\code\mlops\artifacts\training]
+[2023-11-11 23:21:54,283: INFO : main : >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-11-11 23:21:54,283: INFO : main : *******************]
+[2023-11-11 23:21:54,283: INFO : main : >>>>>> stage Evaluation stage started <<<<<<]
+[2023-11-11 23:21:54,288: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\config\config.yaml loaded successfully]
+[2023-11-11 23:21:54,290: INFO : common : yaml file: \deletable\apps\CoTProject\code\mlops\params.yaml loaded successfully]
+[2023-11-11 23:21:54,291: INFO : common : created directory at: /deletable/apps/CoTProject/code/mlops/artifacts]
+[2023-11-11 23:24:51,356: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 23:24:51,357: INFO : common : json file saved at: \deletable\apps\CoTProject\code\mlops\artifacts\scores.json]
+[2023-11-11 23:24:51,358: INFO : main : >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2023-11-11 23:24:52,937: INFO : _internal : 127.0.0.1 - - [11/Nov/2023 23:24:52] "GET /train HTTP/1.1" 200 -]

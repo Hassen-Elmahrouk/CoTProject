@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-
+# the data classes below are containers for the params for each componet of the pipeline
 @dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir: Path

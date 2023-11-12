@@ -6,7 +6,7 @@ from src.stawberryDeseaseClassifier.utils.common import get_size
 from src.stawberryDeseaseClassifier.entity.config_entity import (DataIngestionConfig)
 
 
-
+# this componet is responsible for downloading the data
 class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
         self.config = config
