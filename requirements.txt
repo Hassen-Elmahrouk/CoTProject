@@ -3,7 +3,6 @@ addict==2.4.0
 alembic==1.11.1
 altair==5.1.2
 alyn==0.1.1
-anaconda-client==1.11.2
 antlr4-python3-runtime==4.9.3
 appdirs==1.4.4
 asttokens==2.2.1
@@ -26,7 +25,6 @@ certifi==2023.7.22
 chardet==4.0.0
 click-plugins==1.1.1
 cligj==0.7.2
-clip @ git+https://github.com/openai/CLIP.git@a9b1bf5920416aaeaec965c25dd9e8f98c864f16
 clyent==1.2.1
 cmake==3.26.3
 comm==0.1.3
