@@ -37,8 +37,10 @@ pipeline {
         stage('Data Sync with DVC') {
             steps {
                 script {
-                    // Pull the latest data from DVC remote storage
-                    sh 'dvc pull -r ${DVC_REMOTE}'
+                    // Ensures the script is executed in the directory where the repository is checked out
+                    dir("${WORKSPACE}") {
+                        sh 'dvc pull -r myremote'
+                    }
                 }
             }
         }
