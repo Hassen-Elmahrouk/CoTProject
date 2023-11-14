@@ -6,6 +6,8 @@ pipeline {
         DOCKER_IMAGE = 'strawberry-disease-model'
         // Define the Azure DVC remote name
         DVC_REMOTE = 'myremote'
+        // Add DVC to the PATH for all stages
+        PATH = "${env.PATH}:/var/lib/jenkins/.local/bin"
     }
 
     stages {
