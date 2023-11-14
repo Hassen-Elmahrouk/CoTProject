@@ -37,8 +37,11 @@ pipeline {
         stage('Data Sync with DVC') {
             steps {
                 script {
-                    // Ensures the script is executed in the directory where the repository is checked out
                     dir("${WORKSPACE}") {
+                        // Print the current directory and list the contents to verify
+                        sh 'pwd'
+                        sh 'ls -la'
+                        // Run dvc pull
                         sh 'dvc pull -r myremote'
                     }
                 }
