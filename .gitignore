@@ -82,9 +82,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# DVC (Data Version Control) files
-.dvc/
-
 # Azure specific
 local.settings.json
 azuredeploy.json
