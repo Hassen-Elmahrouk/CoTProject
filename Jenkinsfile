@@ -23,6 +23,15 @@ pipeline {
             }
         }
 
+        stage('Setup DVC') {
+            steps {
+                script {
+                    // Check if DVC is installed, install if not
+                    sh 'which dvc || pip install dvc'
+                }
+            }
+        }
+
         stage('Data Sync with DVC') {
             steps {
                 script {
