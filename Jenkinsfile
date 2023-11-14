@@ -25,20 +25,27 @@ pipeline {
             }
         }
 
-        stage('Setup DVC') {
-            steps {
-                script {
-                    // Check if DVC is installed, install if not
-                    sh 'which dvc || pip install dvc'
-                }
+    stage('Setup DVC') {
+        steps {
+            script {
+                // Install DVC for the Jenkins user
+                sh 'pip install --user dvc'
+                // Append the user binary directory to PATH
+                sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
             }
         }
+    }
+
 
         stage('Data Sync with DVC') {
             steps {
                 script {
+                    // Print the current working directory
+                    sh 'pwd'
+                    // List the contents to confirm the presence of .dvc directory
+                    sh 'ls -la'
                     // Run dvc pull at the root of your project
-                    sh 'dvc pull -r myremote'
+                    sh '$HOME/.local/bin/dvc pull -r ${DVC_REMOTE}'
                 }
             }
         }
