@@ -6,6 +6,8 @@ pipeline {
         DOCKER_IMAGE = 'strawberry-disease-model'
         // Define the Azure DVC remote name
         DVC_REMOTE = 'myremote'
+        // Set the Azure Storage connection string
+        AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=berryscan;AccountKey=QkISzI7rKPcUQoWhsTGlBgcqErzbTPKsZ3FOiww/6Gtm8mBVoOVyjlvMcHn9o1D+cpt7XAawXYi0+AStTXC5dg==;EndpointSuffix=core.windows.net'
         // Add DVC to the PATH for all stages
         PATH = "${env.PATH}:/var/lib/jenkins/.local/bin"
     }
@@ -34,6 +36,8 @@ pipeline {
                 sh 'pip install --user dvc-azure'
                 // Append the user binary directory to PATH
                 sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
+                // Configure Azure as DVC remote using the connection string
+                sh 'dvc remote add -d myremote azure://${AZURE_STORAGE_CONNECTION_STRING}'
             }
         }
     }
