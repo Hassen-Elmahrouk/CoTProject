@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define the Docker image name
-        DOCKER_IMAGE = 'strawberry-disease-model'
+        DOCKER_IMAGE = 'strawberry-disease-modell'
         // Define the Azure DVC remote name
         DVC_REMOTE = 'myremote'
         // Set the Azure Storage connection string
@@ -64,7 +64,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image, tag it appropriately
-                    sh 'docker build -t ${DOCKER_IMAGE} .'
+                    sh 'sudo docker build -t ${DOCKER_IMAGE} .'
                 }
             }
         }
