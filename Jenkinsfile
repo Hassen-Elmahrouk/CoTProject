@@ -36,8 +36,8 @@ pipeline {
                 sh 'pip install --user dvc-azure'
                 // Append the user binary directory to PATH
                 sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
-                // Configure Azure as DVC remote using the connection string
-                sh 'dvc remote add -d myremote azure://${AZURE_STORAGE_CONNECTION_STRING}'
+                // Check if the remote already exists
+                sh 'if dvc remote list | grep -q "myremote"; then echo "Remote myremote already exists"; else dvc remote add -d myremote azure://${AZURE_STORAGE_CONNECTION_STRING}; fi'
             }
         }
     }
@@ -46,12 +46,8 @@ pipeline {
         stage('Data Sync with DVC') {
             steps {
                 script {
-                    // Print the current working directory
-                    sh 'pwd'
-                    // List the contents to confirm the presence of .dvc directory
-                    sh 'ls -la'
-                    // Run dvc pull at the root of your project
-                    sh '$HOME/.local/bin/dvc pull -r ${DVC_REMOTE}'
+                    // Pull data from the remote
+                    sh 'dvc pull -r myremote'
                 }
             }
         }
