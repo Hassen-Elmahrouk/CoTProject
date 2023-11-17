@@ -31,7 +31,7 @@ pipeline {
                 // Install DVC for the Jenkins user
                 sh 'pip install --user dvc'
                 // Install the dvc-azure plugin
-                sh 'pip install --user dvc-azure
+                sh 'pip install --user dvc-azure'
                 // Append the user binary directory to PATH
                 sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
             }
