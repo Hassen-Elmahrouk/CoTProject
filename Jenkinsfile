@@ -55,6 +55,12 @@ pipeline {
         }
 
         stage('Build Docker Image') {
+            agent {
+                docker {
+                    image 'docker:latest'
+                    args '-v /var/run/docker.sock:/var/run/docker.sock'
+                }
+            }
             steps {
                 script {
                     // Build the Docker image, tag it appropriately
@@ -63,15 +69,24 @@ pipeline {
             }
         }
 
+
         stage('Train Model') {
             steps {
                 script {
-                    // Run the Docker container to train the model
-                    // Mount the necessary volumes for data and output
-                    sh 'docker run --rm -v ${WORKSPACE}/data:/app/data -v ${WORKSPACE}/output:/app/output ${DOCKER_IMAGE}'
+                    // Run the Docker container to train the model with GPU support and specific volume mounts
+                    sh '''
+                    docker run --gpus all \
+                    -v /home/hous/Desktop/TEST/train/_annotations.coco.json:/app/data/train/_annotations.coco.json \
+                    -v /home/hous/Desktop/TEST/train:/app/data/train \
+                    -v /home/hous/Desktop/TEST/output_strawberry_test:/app/data/output_strawberry_test \
+                    -v /home/hous/Desktop/TEST/valid:/app/data/valid \
+                    -v /home/hous/Desktop/TEST/valid/_annotations.coco.json:/app/data/valid/_annotations.coco.json \
+                    strawberry-disease-model
+                    '''
                 }
             }
         }
+
 
         stage('Push Model Output to DVC') {
             steps {
