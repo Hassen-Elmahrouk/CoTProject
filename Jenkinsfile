@@ -34,6 +34,8 @@ pipeline {
                 sh 'pip install --user dvc'
                 // Install the dvc-azure plugin
                 sh 'pip install --user dvc-azure'
+                // Upgrade cryptography and SSL related packages
+                sh 'pip install --user --upgrade cryptography pyOpenSSL'
                 // Append the user binary directory to PATH
                 sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
                 // Check if the remote already exists
