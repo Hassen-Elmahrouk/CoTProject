@@ -64,7 +64,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image, tag it appropriately
-                    sh 'sudo docker build -t ${DOCKER_IMAGE} .'
+                    sh 'docker build -t ${DOCKER_IMAGE} .'
                 }
             }
         }
