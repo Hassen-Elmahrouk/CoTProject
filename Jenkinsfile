@@ -11,7 +11,7 @@ pipeline {
         // Add DVC to the PATH for all stages
         PATH = "${env.PATH}:/var/lib/jenkins/.local/bin"
     }
-
+"""
     stages {
         stage('Checkout') {
             steps {
@@ -53,7 +53,7 @@ pipeline {
                 }
             }
         }
-
+"""
         stage('Build Docker Image') {
             agent {
                 docker {
