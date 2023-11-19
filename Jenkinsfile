@@ -26,34 +26,7 @@ pipeline {
                 ])
             }
         }
-"""
-    stage('Setup DVC') {
-        steps {
-            script {
-                // Install DVC for the Jenkins user
-                sh 'pip install --user dvc'
-                // Install the dvc-azure plugin
-                sh 'pip install --user dvc-azure'
-                // Upgrade cryptography and SSL related packages
-                sh 'pip install --user --upgrade cryptography pyOpenSSL'
-                // Append the user binary directory to PATH
-                sh 'echo "export PATH=\$PATH:\$HOME/.local/bin" >> $HOME/.bashrc'
-                // Check if the remote already exists
-                sh 'if dvc remote list | grep -q "myremote"; then echo "Remote myremote already exists"; else dvc remote add -d myremote azure://${AZURE_STORAGE_CONNECTION_STRING}; fi'
-            }
-        }
-    }
 
-
-        stage('Data Sync with DVC') {
-            steps {
-                script {
-                    // Pull data from the remote
-                    sh 'dvc pull -r myremote'
-                }
-            }
-        }
-"""
         stage('Build Docker Image') {
             agent {
                 docker {
