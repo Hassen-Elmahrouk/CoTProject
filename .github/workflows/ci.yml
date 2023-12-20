@@ -41,15 +41,16 @@ jobs:
     - name: Build Docker Image
       run: docker build -t ${DOCKER_IMAGE} .
 
-    - name: Train Model with Docker
+    - name: Train Model with Docker (CPU only)
       run: |
-        docker run --gpus all \
+        docker run \
         -v /home/hous/Desktop/TEST/train/_annotations.coco.json:/app/data/train/_annotations.coco.json \
         -v /home/hous/Desktop/TEST/train:/app/data/train \
         -v /home/hous/Desktop/TEST/output_strawberry_test:/app/data/output_strawberry_test \
         -v /home/hous/Desktop/TEST/valid:/app/data/valid \
         -v /home/hous/Desktop/TEST/valid/_annotations.coco.json:/app/data/valid/_annotations.coco.json \
         ${DOCKER_IMAGE}
+    
 
     - name: Push Model Output to DVC
       run: |
