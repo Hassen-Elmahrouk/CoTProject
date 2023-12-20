@@ -58,7 +58,6 @@ pyarrow==12.0.0
 pyasn1-modules==0.2.8
 pyclipper==1.3.0.post4
 pycocotools==2.0.6
-pycurl==7.45.1
 pydeck==0.8.1b0
 PyDispatcher==2.0.5
 Pygments==2.15.1
