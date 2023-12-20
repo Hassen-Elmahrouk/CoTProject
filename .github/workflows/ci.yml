@@ -1,13 +1,18 @@
-name: Basic CI Pipeline
+name: CI Pipeline for Disease Detection Model
 
 on:
   push:
-    branches: [ Hous ]
+    branches: [ Hous ] # Adjust the branch name as needed
   pull_request:
     branches: [ Hous ]
 
+env:
+  DOCKER_IMAGE: 'strawberry-disease-modell'
+  DVC_REMOTE: 'myremote'
+  AZURE_STORAGE_CONNECTION_STRING: 'YourAzureStorageConnectionString'
+
 jobs:
-  build:
+  build-and-train:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +22,46 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.10' # Modify this to match your Python version
-
-    - name: Install Dependencies
+        python-version: '3.10' 
+        
+    - name: Install DVC and Dependencies
       run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install dvc dvc-azure
+        pip install --upgrade cryptography pyOpenSSL
 
-    # Add additional steps here for running tests or other commands
+    - name: Set Up DVC Remote
+      run: |
+        if ! dvc remote list | grep -q "${DVC_REMOTE}"; then
+          dvc remote add -d ${DVC_REMOTE} azure://${AZURE_STORAGE_CONNECTION_STRING}
+        fi
+
+    - name: Data Sync with DVC
+      run: dvc pull -r ${DVC_REMOTE}
+
+    - name: Build Docker Image
+      run: docker build -t ${DOCKER_IMAGE} .
+
+    - name: Train Model with Docker
+      run: |
+        docker run --gpus all \
+        -v /home/hous/Desktop/TEST/train/_annotations.coco.json:/app/data/train/_annotations.coco.json \
+        -v /home/hous/Desktop/TEST/train:/app/data/train \
+        -v /home/hous/Desktop/TEST/output_strawberry_test:/app/data/output_strawberry_test \
+        -v /home/hous/Desktop/TEST/valid:/app/data/valid \
+        -v /home/hous/Desktop/TEST/valid/_annotations.coco.json:/app/data/valid/_annotations.coco.json \
+        ${DOCKER_IMAGE}
+
+    - name: Push Model Output to DVC
+      run: |
+        dvc add output
+        dvc push -r ${DVC_REMOTE}
+
+    - name: Commit DVC Files
+      run: |
+        git config --global user.name 'Your Name'
+        git config --global user.email 'youremail@example.com'
+        git add .
+        git commit -m "Updated model output and dvc files"
+        git push --set-upstream origin Hous # Adjust the branch name as needed
+
+    # Optional: Steps for cleaning up or additional notifications
