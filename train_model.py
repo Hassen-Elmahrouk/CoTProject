@@ -149,7 +149,7 @@ def register_valid_dataset():
     else:
         logger.info(f"Dataset already registered: {dataset_name}")
 
-def configure_model():
+def configure_model(use_cuda=False):
     cfg = get_cfg()
     # Define hyperparameters
     batch_size = 4  # Example batch size
@@ -164,6 +164,8 @@ def configure_model():
     cfg.SOLVER.BASE_LR = 0.00025  # Starting learning rate
     cfg.TEST.EVAL_PERIOD = 500
     cfg.SOLVER.MAX_ITER = 5000
+    # Set model to CPU if CUDA (GPU) is not available
+    cfg.MODEL.DEVICE = "cuda" if use_cuda and torch.cuda.is_available() else "cpu"
     cfg.SOLVER.STEPS = (3000, 4000)  # Points to decrease the learning rate
     cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 128
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 7
@@ -201,7 +203,7 @@ def main():
 
     try:
         trainer = DefaultTrainer(cfg)
-        trainer.resume_or_load(resume=True)
+        trainer.resume_or_load(resume=False)
         trainer.train()
         
         #upload_folder_to_azure_blob(output_dir,"your-container-name")
