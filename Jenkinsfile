@@ -12,6 +12,14 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Prepare Environment') {
+            steps {
+                script {
+                    // Create the destination directory if it doesn't exist
+                    sh 'mkdir -p /home/hous/Desktop/TEST/test_data'
+                }
+            }
+        }
         stage('Pull Data from Azure Storage') {
             steps {
                 script {
