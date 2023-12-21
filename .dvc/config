@@ -1,6 +1,0 @@
-[core]
-    remote = myremote
-['remote "myremote"']
-    url = azure://data
-    account_name = berryscan
-    account_key = QkISzI7rKPcUQoWhsTGlBgcqErzbTPKsZ3FOiww/6Gtm8mBVoOVyjlvMcHn9o1D+cpt7XAawXYi0+AStTXC5dg==

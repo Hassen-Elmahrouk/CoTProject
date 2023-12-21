@@ -16,7 +16,7 @@ RUN pip install --upgrade pip setuptools
 COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Install detectron2
 RUN pip install 'git+https://github.com/facebookresearch/detectron2.git'
