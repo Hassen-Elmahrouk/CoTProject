@@ -2,21 +2,16 @@ pipeline {
     agent any
 
     environment {
-        // Reference the stored connection string
         AZURE_STORAGE_CONNECTION_STRING = credentials('BERRYSCAN_STORAGE_CONNECTION_STRING')
+        DATA_DIR = "${WORKSPACE}/test_data" // Use Jenkins workspace
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Prepare Environment') {
             steps {
                 script {
                     // Create the destination directory if it doesn't exist
-                    sh 'mkdir -p /home/hous/Desktop/TEST/test_data'
+                    sh 'mkdir -p $DATA_DIR'
                 }
             }
         }
@@ -24,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Pull data from the specified container in the berryscan storage account
-                    sh 'az storage blob download-batch --destination /home/hous/Desktop/TEST/test_data --source data --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                    sh 'az storage blob download-batch --destination $DATA_DIR --source data --connection-string $AZURE_STORAGE_CONNECTION_STRING'
                 }
             }
         }
