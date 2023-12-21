@@ -1,24 +1,25 @@
 pipeline {
-    agent any // This means the pipeline can run on any available agent
+    agent any
+
+    environment {
+        // Reference the stored connection string
+        AZURE_STORAGE_CONNECTION_STRING = credentials('BERRYSCAN_STORAGE_CONNECTION_STRING')
+    }
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                // Add your build steps here
-                echo 'Building..'
+                checkout scm
             }
         }
-        stage('Test') {
+        stage('Pull Data from Azure Storage') {
             steps {
-                // Add your test steps here
-                echo 'Testing..'
+                script {
+                    // Pull data from the specified container in the berryscan storage account
+                    sh 'az storage blob download-batch --destination /home/hous/Desktop/TEST/test_data --source data --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-                // Add your deployment steps here
-                echo 'Deploying..'
-            }
-        }
+        // Other stages as necessary...
     }
 }
