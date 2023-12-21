@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Create the destination directory if it doesn't exist
-                    sh 'mkdir -p /home/hous/Desktop/TEST/test_data'
+                    sh 'sudo mkdir -p /home/hous/Desktop/TEST/test_data'
                 }
             }
         }
