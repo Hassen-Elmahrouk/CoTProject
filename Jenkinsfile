@@ -19,19 +19,21 @@ pipeline {
                 }
             }
         }
-        stage('Pull Training Data from Azure Storage') {
-            steps {
-                script {
-                    // Pull training data from the specified container in Azure storage
-                    sh 'az storage blob download-batch --destination $TRAINING_DATA_DIR --source $TRAINING_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING'
-                }
-            }
-        }
+
         stage('Pull Validation Data from Azure Storage') {
             steps {
                 script {
                     // Pull validation data from the specified container in Azure storage
                     sh 'az storage blob download-batch --destination $VALIDATION_DATA_DIR --source $VALIDATION_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                }
+            }
+        }
+        
+        stage('Pull Training Data from Azure Storage') {
+            steps {
+                script {
+                    // Pull training data from the specified container in Azure storage
+                    sh 'az storage blob download-batch --destination $TRAINING_DATA_DIR --source $TRAINING_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING'
                 }
             }
         }
