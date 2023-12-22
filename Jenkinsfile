@@ -6,7 +6,7 @@ pipeline {
         DATA_DIR = "${WORKSPACE}/test_data" // Use Jenkins workspace
         LOCAL_DIR = "/home/hous/Desktop/TEST/test_data"
         CONTAINER_NAME = "data" // Replace with your actual container name
-        FOLDER_PATH = "real_time_data/" 
+        FOLDER_PATH = "strawberry-disease-detection/" 
     }
 
     stages {
