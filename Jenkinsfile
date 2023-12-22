@@ -27,17 +27,15 @@ pipeline {
                 }
             }
         }
-        stage('Move Data to Local Directory') {
+        stage('List Data') {
             steps {
                 script {
-                    // Ensure the local directory exists
-                    sh 'sudo mkdir -p $LOCAL_DIR'
-
-                    // Move data from the workspace directory to the local directory
-                    sh 'sudo mv $DATA_DIR/* $LOCAL_DIR'
+                    // List contents of the test_data directory
+                    sh 'ls -lah $DATA_DIR'
                 }
             }
         }
+
         // Other stages as necessary...
     }
 }
