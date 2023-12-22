@@ -4,7 +4,6 @@ pipeline {
     environment {
         AZURE_STORAGE_CONNECTION_STRING = credentials('BERRYSCAN_STORAGE_CONNECTION_STRING')
         DATA_DIR = "${WORKSPACE}/test_data" // Use Jenkins workspace
-        LOCAL_DIR = "/home/hous/Desktop/TEST/test_data"
         CONTAINER_NAME = "data" // Replace with your actual container name
         FOLDER_PATH = "strawberry-disease-detection/" 
     }
@@ -13,8 +12,7 @@ pipeline {
         stage('Prepare Environment') {
             steps {
                 script {
-                    sh 'rm -rf $DATA_DIR/*'
-                    // Create the destination directory if it doesn't exist
+                    // Ensure the destination directory exists, do not clear it
                     sh 'mkdir -p $DATA_DIR'
                 }
             }
@@ -23,6 +21,7 @@ pipeline {
             steps {
                 script {
                     // Pull data from the specified folder in the Azure storage account
+                    // This won't overwrite existing files
                     sh 'az storage blob download-batch --destination $DATA_DIR --source $CONTAINER_NAME --pattern $FOLDER_PATH* --connection-string $AZURE_STORAGE_CONNECTION_STRING'
                 }
             }
