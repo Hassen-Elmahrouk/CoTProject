@@ -93,15 +93,14 @@ pipeline {
                     withEnv(['AZURE_STORAGE_CONN_STRING=$AZURE_STORAGE_CONNECTION_STRING']) {
                         sh """
                         cd $OUTPUT_DIR
-                        az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source . --pattern '*' --destination-path $destinationBlobPath --connection-string \$AZURE_STORAGE_CONN_STRING
+                        az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source . --destination-path $destinationBlobPath --connection-string \$AZURE_STORAGE_CONN_STRING
                         """
                     }
                     echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${destinationBlobPath}"
                 }
             }
         }
-
-
+        
         stage('Cleanup Resources') {
             steps {
                 script {
