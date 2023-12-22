@@ -7,7 +7,8 @@ pipeline {
         VALIDATION_DATA_DIR = "${WORKSPACE}/validation_data" // Directory for validation data
         TRAINING_CONTAINER_NAME = "trainingdata" // Container for training data
         VALIDATION_CONTAINER_NAME = "validationdata" // Container for validation data
-        OUTPUT_DIR = "${WORKSPACE}/output_strawberry_test" // Directory for output
+        OUTPUT_DIR = "${WORKSPACE}/output_strawberry_test"
+        OUTPUT_CONTAINER_NAME = "outputdata"  // Directory for output
         DOCKER_IMAGE = "strawberry-disease-model"
     }
 
@@ -34,7 +35,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Pull Validation Data from Azure Storage') {
             steps {
                 script {
@@ -82,6 +83,45 @@ pipeline {
                     }
                 }
             }
+        }
+
+        stage('Upload Output to Azure Storage') {
+            steps {
+                script {
+                    // Get the current date in YYYYMMDD format
+                    def currentDate = new Date().format('yyyyMMdd')
+                    // Define the destination blob path with the date
+                    def destinationBlobPath = "output_${currentDate}/"
+
+                    // Upload the output directory to Azure Blob Storage with the date in the name
+                    sh """
+                    az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $OUTPUT_DIR --pattern * --destination-path $destinationBlobPath --connection-string $AZURE_STORAGE_CONNECTION_STRING
+                    """
+                    echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${destinationBlobPath}"
+                }
+            }
+        }
+
+        stage('Cleanup Resources') {
+            steps {
+                script {
+                    // Commands to clean up resources. Adjust as necessary for your environment.
+                    echo 'Cleaning up resources...'
+                    sh 'rm -rf $SOME_TEMP_DIRECTORY'
+                    // Add other cleanup commands as needed.
+                }
+            }
+        }
+    }
+    post {
+        success {
+            // Archive artifacts in the OUTPUT_DIR after a successful build
+            archiveArtifacts artifacts: '$OUTPUT_DIR/*', fingerprint: true
+        }
+        always {
+            // Even if the build fails or is aborted, clean up the OUTPUT_DIR
+            echo 'Performing post-build cleanup...'
+            sh 'rm -rf $OUTPUT_DIR'
         }
     }
 }
