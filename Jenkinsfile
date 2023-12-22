@@ -31,10 +31,10 @@ pipeline {
             steps {
                 script {
                     // Ensure the local directory exists
-                    sh 'mkdir -p $LOCAL_DIR'
+                    sh 'sudo mkdir -p $LOCAL_DIR'
 
                     // Move data from the workspace directory to the local directory
-                    sh 'mv $DATA_DIR/* $LOCAL_DIR'
+                    sh 'sudo mv $DATA_DIR/* $LOCAL_DIR'
                 }
             }
         }
