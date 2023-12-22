@@ -13,6 +13,7 @@ pipeline {
         stage('Prepare Environment') {
             steps {
                 script {
+                    sh 'rm -rf $DATA_DIR/*'
                     // Create the destination directory if it doesn't exist
                     sh 'mkdir -p $DATA_DIR'
                 }
