@@ -30,17 +30,14 @@ pipeline {
             steps {
                 script {
                     // Pull validation data from the specified container in Azure storage
-                    sh 'az storage blob download-batch --destination $VALIDATION_DATA_DIR --source $VALIDATION_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING --no-overwrite'
-                }
-            }
+                    sh 'az storage blob download-batch --destination $VALIDATION_DATA_DIR --source $VALIDATION_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING --overwrite'            }
         }
         
         stage('Pull Training Data from Azure Storage') {
             steps {
                 script {
                     // Pull training data from the specified container in Azure storage
-                    sh 'az storage blob download-batch --destination $TRAINING_DATA_DIR --source $TRAINING_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING'
-                }
+                    sh 'az storage blob download-batch --destination $TRAINING_DATA_DIR --source $TRAINING_CONTAINER_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING --overwrite'                }
             }
         }
         stage('List Training Data') {
