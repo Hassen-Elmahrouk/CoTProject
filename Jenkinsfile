@@ -11,7 +11,7 @@ pipeline {
         OUTPUT_CONTAINER_NAME = "outputdata"  // Directory for output
         DOCKER_IMAGE = "strawberry-disease-model"
     }
-
+stages {
         stage('Upload Output to Azure Storage') {
     steps {
         script {
@@ -33,5 +33,6 @@ pipeline {
             echo "Output uploaded to ${newOutputDirName}"
         }
     }
+}
 }
 }
