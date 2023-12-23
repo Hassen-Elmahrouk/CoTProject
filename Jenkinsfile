@@ -101,16 +101,14 @@ pipeline {
             cp -r $OUTPUT_DIR/* $newOutputDir/
             """
 
-            // Upload the new directory to the newly created Azure Blob Storage container
-            sh 'az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING'
-            
+            // Create a new container with the name of newOutputDirName
+            sh """
+            az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING
+            """
             echo "Output uploaded to ${newOutputDirName}"
         }
     }
 }
-
-
-
 
         stage('Cleanup Resources') {
     steps {
