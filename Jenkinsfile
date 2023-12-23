@@ -91,7 +91,7 @@ pipeline {
                     // Get the current date in YYYYMMDD format
                     def currentDate = new Date().format('yyyyMMdd')
                     // Define the new directory name with the date
-                    def newOutputDirName = "output_strawberry_test_${currentDate}"
+                    def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase() // Container names must be lowercase
                     // Define the full path for the new directory
                     def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
 
@@ -101,29 +101,42 @@ pipeline {
                     cp -r $OUTPUT_DIR/* $newOutputDir/
                     """
 
-                    // Upload the new directory to Azure Blob Storage
-                    sh 'az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                    // Create a new container with the name of newOutputDirName
+                    sh """
+                    az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING
+                    """
+
+                    // Upload the new directory to the newly created Azure Blob Storage container
+                    sh """
+                    az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING
+                    """
                     
-                    echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${newOutputDirName}"
-                }
-            }
-        }
-
-
-        stage('Cleanup Resources') {
-            steps {
-                script {
-                    // Define the new directory name with the date for cleanup
-                    def currentDate = new Date().format('yyyyMMdd')
-                    def newOutputDirName = "output_strawberry_test_${currentDate}"
-                    def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
-
-                    echo 'Cleaning up resources...'
-                    // Remove the temporary new output directory
-                    sh "rm -rf $newOutputDir"
+                    echo "Output uploaded to ${newOutputDirName}"
                 }
             }
 }
+
+
+
+        stage('Cleanup Resources') {
+    steps {
+        script {
+            // Get the current date in the same format as used in the upload stage
+            def currentDate = new Date().format('yyyyMMdd')
+            // Define the new directory name with the date for cleanup, ensuring it's lowercase
+            def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase()
+            // Define the full path for the new directory
+            def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
+
+            echo 'Cleaning up resources...'
+            // Remove the temporary new output directory
+            sh "rm -rf $newOutputDir"
+            // Remove the original output directory if needed
+            sh "rm -rf $OUTPUT_DIR"
+        }
+    }
+}
+
 
     }
     post {
