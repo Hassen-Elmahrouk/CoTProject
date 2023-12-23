@@ -105,6 +105,10 @@ pipeline {
             sh """
             az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING
             """
+             // Upload the new directory to the newly created Azure Blob Storage container
+            sh """
+            az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING
+            """
             echo "Output uploaded to ${newOutputDirName}"
         }
     }
