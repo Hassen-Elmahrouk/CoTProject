@@ -88,14 +88,7 @@ pipeline {
         stage('Upload Output to Azure Storage') {
             steps {
                 script {
-                    def currentDate = new Date().format('yyyyMMdd')
-                    def destinationBlobPath = "output_${currentDate}/"
-                    withEnv(['AZURE_STORAGE_CONN_STRING=$AZURE_STORAGE_CONNECTION_STRING']) {
-                        sh """
-                        cd $OUTPUT_DIR
-                        az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $OUTPUT_DIR --connection-string \$AZURE_STORAGE_CONN_STRING
-                        """
-                    }
+                        sh 'az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $OUTPUT_DIR --connection-string $AZURE_STORAGE_CONNECTION_STRING '               
                     echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${destinationBlobPath}"
                 }
             }
