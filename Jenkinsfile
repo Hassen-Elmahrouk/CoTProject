@@ -86,35 +86,29 @@ pipeline {
         }
 
         stage('Upload Output to Azure Storage') {
-            steps {
-                script {
-                    // Get the current date in YYYYMMDD format
-                    def currentDate = new Date().format('yyyyMMdd')
-                    // Define the new directory name with the date
-                    def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase() // Container names must be lowercase
-                    // Define the full path for the new directory
-                    def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
+    steps {
+        script {
+            // Get the current date in YYYYMMDD format
+            def currentDate = new Date().format('yyyyMMdd')
+            // Define the new directory name with the date
+            def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase() // Container names must be lowercase
+            // Define the full path for the new directory
+            def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
 
-                    // Create the new directory and copy contents from the original output directory
-                    sh """
-                    mkdir -p $newOutputDir
-                    cp -r $OUTPUT_DIR/* $newOutputDir/
-                    """
+            // Create the new directory and copy contents from the original output directory
+            sh """
+            mkdir -p $newOutputDir
+            cp -r $OUTPUT_DIR/* $newOutputDir/
+            """
 
-                    // Create a new container with the name of newOutputDirName
-                    sh """
-                    az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING
-                    """
-
-                    // Upload the new directory to the newly created Azure Blob Storage container
-                    sh """
-                    az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING
-                    """
-                    
-                    echo "Output uploaded to ${newOutputDirName}"
-                }
-            }
+            // Upload the new directory to the newly created Azure Blob Storage container
+            sh 'az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+            
+            echo "Output uploaded to ${newOutputDirName}"
+        }
+    }
 }
+
 
 
 
