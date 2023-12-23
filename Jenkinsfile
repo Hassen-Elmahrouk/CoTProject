@@ -88,22 +88,43 @@ pipeline {
         stage('Upload Output to Azure Storage') {
             steps {
                 script {
-                        sh 'az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $OUTPUT_DIR --connection-string $AZURE_STORAGE_CONNECTION_STRING '               
-                    echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${destinationBlobPath}"
+                    // Get the current date in YYYYMMDD format
+                    def currentDate = new Date().format('yyyyMMdd')
+                    // Define the new directory name with the date
+                    def newOutputDirName = "output_strawberry_test_${currentDate}"
+                    // Define the full path for the new directory
+                    def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
+
+                    // Create the new directory and copy contents from the original output directory
+                    sh """
+                    mkdir -p $newOutputDir
+                    cp -r $OUTPUT_DIR/* $newOutputDir/
+                    """
+
+                    // Upload the new directory to Azure Blob Storage
+                    sh 'az storage blob upload-batch --destination $OUTPUT_CONTAINER_NAME --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                    
+                    echo "Output uploaded to ${OUTPUT_CONTAINER_NAME}/${newOutputDirName}"
                 }
             }
         }
 
+
         stage('Cleanup Resources') {
             steps {
                 script {
-                    // Commands to clean up resources. Adjust as necessary for your environment.
+                    // Define the new directory name with the date for cleanup
+                    def currentDate = new Date().format('yyyyMMdd')
+                    def newOutputDirName = "output_strawberry_test_${currentDate}"
+                    def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
+
                     echo 'Cleaning up resources...'
-                    sh 'rm -rf $SOME_TEMP_DIRECTORY'
-                    // Add other cleanup commands as needed.
+                    // Remove the temporary new output directory
+                    sh "rm -rf $newOutputDir"
                 }
             }
-        }
+}
+
     }
     post {
         success {
