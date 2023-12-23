@@ -19,20 +19,22 @@ stages {
             def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase()
             def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
 
-            // Print the variables to check their values
-            echo "Current Date: $currentDate"
-            echo "New Output Directory Name: $newOutputDirName"
-            echo "New Output Directory Path: $newOutputDir"
+            sh 'mkdir -p $newOutputDir'
+            sh 'cp -r $OUTPUT_DIR/* $newOutputDir/'
 
-            sh "mkdir -p $newOutputDir"
-            sh "cp -r $OUTPUT_DIR/* $newOutputDir/"
+            // Pass the Azure Storage Connection String as an environment variable
+            withEnv(['AZURE_STORAGE_CONN_STRING=$AZURE_STORAGE_CONNECTION_STRING']) {
+                // Create a new container with the name of newOutputDirName
+                sh 'az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONN_STRING'
 
-            sh "az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING"
-            sh "az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING"
+                // Upload the new directory to the newly created Azure Blob Storage container
+                sh 'az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONN_STRING'
+            }
 
             echo "Output uploaded to ${newOutputDirName}"
         }
     }
 }
+
 }
 }
