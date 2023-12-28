@@ -35,8 +35,6 @@ pipeline {
 
                     // Create the new output directory and copy files into it
                     sh "mkdir -p '$newOutputDir'"
-                    sh 'cp -r $OUTPUT_DIR/* $newOutputDir/'
-
                     // Run your Azure CLI commands
                     sh """
                     az storage container create --name $newOutputDirName --connection-string \$AZURE_STORAGE_CONNECTION_STRING
