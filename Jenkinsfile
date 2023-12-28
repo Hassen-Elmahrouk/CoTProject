@@ -117,7 +117,7 @@ pipeline {
             // Step 5: Create Azure storage container and upload the blob
             try {
                 sh "az storage container create --name '$newOutputDirName' --connection-string '$AZURE_STORAGE_CONNECTION_STRING'"
-                sh "az storage blob upload-batch --destination '$newOutputDirName' --source $newOutputDir --connection-string '$AZURE_STORAGE_CONNECTION_STRING'"
+                sh "az storage blob upload-batch --destination '$newOutputDirName' --source '$newOutputDir' --connection-string '$AZURE_STORAGE_CONNECTION_STRING'"
                 echo "Output successfully uploaded to ${newOutputDirName}"
             } catch (Exception e) {
                 echo "Error encountered during Azure commands execution: $e"
