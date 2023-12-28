@@ -46,14 +46,5 @@ pipeline {
                 }
             }
         }
-
-        post {
-            always {
-                // Cleanup after the build
-                echo 'Performing post-test cleanup...'
-                sh 'rm -rf $newOutputDir'
-                sh 'rm -rf $OUTPUT_DIR'
-            }
-        }
     }
 }
