@@ -88,25 +88,45 @@ pipeline {
         stage('Upload Output to Azure Storage') {
     steps {
         script {
+            // Step 1: Print Jenkins environment information
+            echo "Starting the 'Upload Output to Azure Storage' stage."
+            echo "Printing Jenkins environment information..."
+            sh 'printenv'  // Prints all environment variables
+
+            // Step 2: Initialize and print variables
             def currentDate = new Date().format('yyyyMMdd')
             def newOutputDirName = "outputstrawberrytest${currentDate}".toLowerCase()
             def newOutputDir = "${WORKSPACE}/${newOutputDirName}"
 
-            // Print the variables to check their values
             echo "Current Date: $currentDate"
             echo "New Output Directory Name: $newOutputDirName"
             echo "New Output Directory Path: $newOutputDir"
 
+            // Step 3: Check if the variables are set correctly
+            if (newOutputDirName == null || newOutputDirName.trim().isEmpty()) {
+                error "newOutputDirName is not set. Check the date formatting and variable initialization."
+            }
+            if (WORKSPACE == null || WORKSPACE.trim().isEmpty()) {
+                error "WORKSPACE is not set. Ensure it's a properly set environment variable."
+            }
+
+            // Step 4: Create and copy to the new output directory
             sh "mkdir -p '$newOutputDir'"
             sh "cp -r $OUTPUT_DIR/* '$newOutputDir/'"
 
-            sh 'az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING'
-            sh "az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING"
-
-            echo "Output uploaded to ${newOutputDirName}"
+            // Step 5: Create Azure storage container and upload the blob
+            try {
+                sh 'az storage container create --name $newOutputDirName --connection-string $AZURE_STORAGE_CONNECTION_STRING'
+                sh "az storage blob upload-batch --destination $newOutputDirName --source $newOutputDir --connection-string $AZURE_STORAGE_CONNECTION_STRING"
+                echo "Output successfully uploaded to ${newOutputDirName}"
+            } catch (Exception e) {
+                echo "Error encountered during Azure commands execution: $e"
+                error "Failed to create container or upload blob. Check the Azure CLI commands and connection string."
+            }
         }
     }
 }
+
 
 
         stage('Cleanup Resources') {
