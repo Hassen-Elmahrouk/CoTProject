@@ -34,7 +34,7 @@ pipeline {
                     echo "New Output Directory Path: ${newOutputDir}"
 
                     // Create the new output directory and copy files into it
-                    sh 'mkdir -p $newOutputDir'
+                    sh "mkdir -p '$newOutputDir'"
                     sh 'cp -r $OUTPUT_DIR/* $newOutputDir/'
 
                     // Run your Azure CLI commands
