@@ -12,7 +12,8 @@ pipeline {
         stage('Setup Mock Data') {
             steps {
                 script {
-                    // Mock data setup if necessary. E.g., create a dummy file to simulate output.
+                    // Print the command before executing it for debugging
+                    echo "Running command: mkdir -p $OUTPUT_DIR"
                     sh 'mkdir -p $OUTPUT_DIR'
                     sh 'echo Dummy Data > $OUTPUT_DIR/dummy.txt'
                 }
