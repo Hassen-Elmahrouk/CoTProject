@@ -38,7 +38,7 @@ def configure_model(use_cuda=False):
     cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")
     cfg.SOLVER.IMS_PER_BATCH = 2  # Adjusted for potential memory issues
     cfg.SOLVER.BASE_LR = 0.00025
-    cfg.SOLVER.MAX_ITER = 5000
+    cfg.SOLVER.MAX_ITER = 100
     cfg.MODEL.DEVICE = "cuda" if use_cuda and torch.cuda.is_available() else "cpu"
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 7  # Adjust this as per your dataset
     # Additional configurations as required
