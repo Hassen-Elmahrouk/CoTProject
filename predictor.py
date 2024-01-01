@@ -12,7 +12,7 @@ def setup_cfg(weights_path):
     """
     cfg = get_cfg()
     cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
-    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 6  # Change as per your model's classes
+    cfg.MODEL.ROI_HEADS.NUM_CLASSES = 7
     cfg.MODEL.WEIGHTS = weights_path
     cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.6  # Set the detection threshold
     cfg.MODEL.DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -45,3 +45,4 @@ def perform_prediction(image_path, weights_path):
         return pred_classes, scores,pred_masks
     else:
         print("Failed to load image!")
+        return None, None, None  # Return a tuple of Nones
