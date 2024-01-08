@@ -13,6 +13,7 @@ tn\supcom\util\BeanValConstrainViolationExceptionMapper.class
 tn\supcom\models\Role.class
 tn\supcom\repository\UserRepository.class
 tn\supcom\exceptions\UserNotFoundException.class
+tn\supcom\filters\CorsFilter.class
 tn\supcom\services\UserServiceImpl.class
 tn\supcom\exceptions\UserForbiddenException.class
 tn\supcom\JAXRSConfiguration.class
@@ -22,7 +23,10 @@ tn\supcom\repository\DocumentManagerProducer.class
 tn\supcom\security\AccessToken.class
 tn\supcom\security\GrantType.class
 tn\supcom\security\Oauth2Request.class
+tn\supcom\boundaries\LogoutResource.class
+tn\supcom\filters\MyLogger.class
 tn\supcom\models\User.class
+tn\supcom\filters\MyLogger$Literal.class
 tn\supcom\security\Oauth2Response.class
 tn\supcom\security\UserToken.class
 tn\supcom\filters\Secured.class

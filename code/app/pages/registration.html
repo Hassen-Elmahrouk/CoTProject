@@ -36,14 +36,18 @@
               <label for="username">Username</label>
             </div>
             <div class="input-field">
-              <input id="email" type="email" class="validate" required>
-              <label for="email">Email</label>
+              <input id="forname" type="text" class="validate" required>
+              <label for="forname">Forname</label>
+            </div>
+            <div class="input-field">
+              <input id="myemail" type="text" class="validate" required>
+              <label for="myemail">Email</label>
             </div>
             <div class="input-field">
               <input id="password" type="password" class="validate" required>
               <label for="password">Password</label>
             </div>
-            <button class="btn waves-effect waves-light add-btn" type="submit">Register</button>
+            <button class="btn waves-effect waves-light add-btn" type="submit" onclick="registerUser(event)">Register</button>
           </form>
           <p class="center-align">Already have an account? <a href="/login.html">Login</a></p>
         </div>
@@ -52,9 +56,9 @@
   </div>
 
   <!-- Include necessary scripts -->
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
-  <script src="/js/auth.js"></script>
-  <!-- Other scripts as needed -->
+  <script  src="/js/registration.js"></script>
+
+  <script type="text/javascript" src="/js/materialize.min.js"></script>  <!-- Other scripts as needed -->
 
 </body>
 </html>

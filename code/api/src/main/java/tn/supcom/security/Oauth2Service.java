@@ -4,6 +4,7 @@ package tn.supcom.security;
 import org.eclipse.microprofile.config.Config;
 import org.eclipse.microprofile.config.ConfigProvider;
 import tn.supcom.exceptions.UserNotAuthorizedException;
+import tn.supcom.exceptions.UserNotFoundException;
 import tn.supcom.models.User;
 import tn.supcom.repository.UserTokenRepository;
 
@@ -13,6 +14,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -85,6 +88,14 @@ public class Oauth2Service {
         return response;
     }
 
+    public void logout(String email) {
+        // Find user token by access token
+        if (!userTokenRepository.findById(email).isPresent()) {
+            throw new UserNotFoundException("there is  no user with email :" + email);
+        }
+        userTokenRepository.deleteById(email);
+        System.out.println("Logout!!!");
 
 
-}
+    }
+    }

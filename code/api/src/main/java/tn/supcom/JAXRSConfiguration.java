@@ -1,16 +1,13 @@
 package tn.supcom;
 
+import tn.supcom.boundaries.UserResources;
+import tn.supcom.filters.CorsFilter;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- * Configures JAX-RS for the application.
- * @author Adam M. Gamboa G
- */
-@ApplicationPath("api")
+@ApplicationPath("/api")
 public class JAXRSConfiguration extends Application {
-
-
-
-
 }

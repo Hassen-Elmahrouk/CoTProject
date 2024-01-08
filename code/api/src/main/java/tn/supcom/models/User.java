@@ -134,7 +134,7 @@ public class User   implements Serializable {
     }
 
     public void updatePassword(String password, Argon2Utility argon2Utility) {
-        this.password = argon2Utility.hash(password.toCharArray());
+        this.password = Argon2Utility.hash(password.toCharArray());
     }
 
 

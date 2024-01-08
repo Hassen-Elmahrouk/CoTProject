@@ -1,5 +1,6 @@
 package tn.supcom;
 
+
 import javax.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped

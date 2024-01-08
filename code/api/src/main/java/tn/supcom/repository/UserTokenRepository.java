@@ -17,6 +17,10 @@ public interface UserTokenRepository extends Repository<UserToken,String> {
     @Query("select * from UserToken where tokens.accessToken.token = @accessToken")
     Optional<UserToken> findByAccessToken(@Param("accessToken") String token);
 
+    // New method to delete a UserToken by its token
+    @Query("delete from UserToken where tokens.token = @token")
+    void deleteByToken(@Param("token") String token);
+
 
 
 }
