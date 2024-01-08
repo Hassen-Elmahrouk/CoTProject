@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="modernparker" options="-endorseddirs C:\Users\Hasse\OneDrive\Desktop\finech\target/endorsed" />
+      <module name="modernparker" options="-endorseddirs C:\deletable\apps\CoTProject\code\api\target/endorsed" />
     </option>
   </component>
 </project>
