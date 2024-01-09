@@ -1,0 +1,6 @@
+outs:
+- md5: 218db5e00d6d949d11c88ac1f67acf2a.dir
+  size: 17582
+  nfiles: 4
+  hash: md5
+  path: output_strawberry_test
