@@ -1,16 +1,18 @@
 const staticCacheName = 'site-static-v2';
 const dynamicCacheName = 'site-dynamic-v1';
 const assets = [
-  '/index.html',
     '/',
     '/js/user.js',
+  '/index.html',
   '/js/app.js',
   '/js/materialize.min.js',
   '/css/styles.css',
   '/css/materialize.min.css',
   '/img/berry.png',
   '/pages/fallback.html',
-    '/pages/about.html'
+    '/pages/about.html',
+    '/pages/contact.html',
+    '/pages/profile.html'
 ];
 
 // cache size limit function

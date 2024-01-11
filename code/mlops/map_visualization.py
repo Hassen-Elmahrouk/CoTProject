@@ -9,14 +9,14 @@ from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
 
 # Specify the database and collection
-db = client['my_dataset']
+db = client['berryscan_db']
 collection = db['annotations']
 
 # Path to the folder containing your images
-image_folder = 'valid'
+image_folder = 'C:/deletable/apps/CoTProject/code/mlops/valid'
 
 # Read the data from the coordinates file
-file_path = 'image_coordinates.txt'
+file_path = 'C:/deletable/apps/CoTProject/code/mlops/image_coordinates.txt'
 data = []
 
 with open(file_path, 'r') as file:
@@ -85,4 +85,4 @@ for name, lat, lon in data:
         print(f"Image not found for {name}")
 
 # Save the map
-m.save('map_with_large_images.html')
+m.save('map.html')

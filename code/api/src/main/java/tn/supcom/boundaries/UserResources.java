@@ -1,14 +1,12 @@
 package tn.supcom.boundaries;
 
 
-
 import tn.supcom.exceptions.UserAlreadyExistsException;
 import tn.supcom.exceptions.UserNotFoundException;
 import tn.supcom.filters.Secured;
 import tn.supcom.models.User;
 import tn.supcom.services.UserServiceImpl;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -16,6 +14,12 @@ import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 @ApplicationScoped
 @Path("")
@@ -149,4 +153,41 @@ public class UserResources {
             return Response.status(404, e.getMessage()).build();
         }
     }
+
+    @GET
+    @Path("/getAnnotations")
+    @RolesAllowed("ADMIN")
+    public Response getAnnotationsFromFlaskAPI() {
+        try {
+            String flaskApiUrl = "http://127.0.0.1:5000/api/annotations";  // Replace with your Flask API URL
+            String annotationsJson = sendHttpRequest(flaskApiUrl);
+
+            return Response.ok(annotationsJson).build();
+        } catch (IOException e) {
+            return Response.status(500, "Error retrieving annotations from Flask API").build();
+        }
+    }
+
+    private String sendHttpRequest(String apiUrl) throws IOException {
+        URL url = new URL(apiUrl);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+
+            return response.toString();
+        } finally {
+            connection.disconnect();
+        }
+    }
+
+
+
+
 }

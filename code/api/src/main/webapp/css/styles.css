@@ -75,7 +75,6 @@ form .input-field{
   margin-top: 30px;
 }
 #map { height: 350px;
-  display: none;
 }
 #showMore{
 text-align: center; 
