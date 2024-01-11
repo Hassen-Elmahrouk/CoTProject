@@ -135,4 +135,21 @@ font-weight: bold;
   background: var(--title) !important;
 }
 
-/* Add any additional styling based on your design preferences */
+
+
+
+/* Progress Bar */
+#progress-bar {
+  width: 0%;
+  height: 20px; /* Adjust height as needed */
+  background-color: #007bff; /* a nice blue */
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out; /* Smooth transition for width */
+}
+
+/* Progress Text */
+#progress-text {
+  margin-top: 10px;
+  color: #333; /* Dark text color for readability */
+  font-size: 1em;
+}

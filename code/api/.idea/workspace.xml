@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="bdefa52f-93b3-4eb9-859e-e3625ed89fb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/authentification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/lbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/lbs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mlops/db_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/db_creator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,30 +48,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JBoss/WildFly Server.JBoss/WildFly 26.1.2.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/deletable/apps/CoTProject/code/api/target/berryscan-0.0.war&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JBoss/WildFly Server.JBoss/WildFly 26.1.2.Final.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/deletable/apps/CoTProject/code/api/target/berryscan-1.0.war",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="JBoss/WildFly 26.1.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.1.2.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="17" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <file path="$PROJECT_DIR$/target/berryscan-0.0.war">
+        <file path="$PROJECT_DIR$/target/berryscan-1.0.war">
           <settings />
         </file>
       </deployment>
@@ -150,7 +161,7 @@
       <workItem from="1704931672659" duration="282000" />
       <workItem from="1704932188634" duration="1361000" />
       <workItem from="1704955796636" duration="15406000" />
-      <workItem from="1704981859368" duration="8949000" />
+      <workItem from="1704981859368" duration="15084000" />
     </task>
     <servers />
   </component>

@@ -51,7 +51,7 @@ function performLogin() {
     body: urlencoded,
     redirect: 'follow'
   };
-  fetch("https://api.berryscan.tech/api/oauth2/token", requestOptions)
+  fetch("https://berryscan.tech/api/oauth2/token", requestOptions)
     .then(response => response.json())
     .then(result => {
       const { userId, accessToken, refreshToken } = result;

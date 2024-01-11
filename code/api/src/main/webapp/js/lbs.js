@@ -28,7 +28,74 @@ function onLocationFound(e) {
 // Once we have a location, call this function
 map.on('locationfound', onLocationFound);
 
+
+
+function showProgressBar() {
+    document.getElementById('progress-container').style.display = 'block';
+    incrementProgressBar();
+}
+
+function incrementProgressBar() {
+    var progressBar = document.getElementById('progress-bar');
+    var width = 0;
+    var interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+        } else {
+            width++;
+            progressBar.style.width = width + '%';
+        }
+    }, 100); // Adjust the interval time as needed
+}
+
+function hideProgressBar() {
+    document.getElementById('progress-container').style.display = 'none';
+}
+
+
+
+function updateBarChart(data) {
+    // Count occurrences of each category
+    let categoryCounts = {};
+    data.annotations.forEach(annotation => {
+        if (categoryCounts[annotation.category]) {
+            categoryCounts[annotation.category]++;
+        } else {
+            categoryCounts[annotation.category] = 1;
+        }
+    });
+
+    // Prepare data for the chart
+    const chartLabels = Object.keys(categoryCounts);
+    const chartData = Object.values(categoryCounts);
+
+    // Create the chart
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartLabels,
+            datasets: [{
+                label: 'Number of Occurrences',
+                data: chartData,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+
 // Fetch data from your API
+showProgressBar();
 fetch("https://berryscan.tech/api/getAnnotations", {
     method: 'GET',
     headers: {
@@ -37,6 +104,10 @@ fetch("https://berryscan.tech/api/getAnnotations", {
 })
     .then(response => response.json())
     .then(data => {
+        updateBarChart(data);
+        hideProgressBar();
+
+
 
         // Iterate through the received annotations and add markers to the API layer
         data.annotations.forEach(annotation => {
@@ -52,8 +123,8 @@ fetch("https://berryscan.tech/api/getAnnotations", {
 
             // Create a popup with the image data
             const popupContent = `<div style="max-width: 500px; max-height: 500px; position: relative;">
-    <img src="data:image/png;base64,${imageData}" alt="${category}" style="width: 100%; height: auto;">
-    <div style="text-align: center; margin-top: 5px;">${category}</div>
+<img src="data:image/png;base64,${base64Image}" alt="${category}" style="width: 100%; height: auto;">
+<div style="text-align: center; margin-top: 5px;">${category}</div>
 </div>`;
             // Create a popup with the image data
 
@@ -67,8 +138,11 @@ fetch("https://berryscan.tech/api/getAnnotations", {
                 map.setView([lat, lon], 15);
             });
         });
+
     })
-    .catch(error => console.error('Error fetching data:', error));
+    .catch(error => {console.error('Error fetching data:', error);
+        hideProgressBar()
+    });
 
 
 // Handle location error

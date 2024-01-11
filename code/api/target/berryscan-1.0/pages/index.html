@@ -10,7 +10,7 @@
   <link type="text/css" href="/css/styles.css" rel="stylesheet">
   <script type="text/javascript" src="/js/materialize.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- ios support -->
   <link rel="apple-touch-icon" href="/img/icons/icon-128x128.png">
   <meta name="apple-mobile-web-app-status-bar" content="#ffd2d7">
@@ -52,14 +52,19 @@
 <div class="results container grey-text text-darken-1">
   <div class="card-panel result white row">
     <img src="/img/berry.png" alt="result thumb" style="width: 72px; height: 72px;">
-    <div class="result-details">
-      <div class="result-title">Prediction</div>
-      <div class="result-ingredients"></div>
-      <div id="map" ></div>
-      <div id="showMore" onclick="toggleMap()" >More Details</div>
 
-      <!-- Add your centered div here -->
+
+    <div id="progress-container" style="display: none; width: 100%; text-align: center; background-color: lightgray;">
+      <div id="progress-bar" style="width: 0%; height: 30px; background-color: green;"></div>
+      <div id="progress-text" style="margin-top: 10px;">We are making predictions for you...</div>
     </div>
+
+      <div id="map" ></div>
+    <!-- Simplified Progress Bar -->
+      <div id="chart-container" style="width:75%;">
+        <canvas id="categoryChart"></canvas>
+      </div>
+   </div>
   </div>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>

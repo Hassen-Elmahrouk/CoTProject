@@ -18,7 +18,7 @@ if (userTokenData) {
   };
 
   // Fetch user data from the server
-  fetch(`https://berryscan.tech/api/user/${userTokenData.userId}`, requestOptions)
+  fetch(`http://localhost:8080/api/user/${userTokenData.userId}`, requestOptions)
     .then(response => response.json()) // Assuming the server returns JSON data
     .then(userData => {
       // Update the user name and email in the HTML form
@@ -61,7 +61,7 @@ function saveChanges() {
     };
 
     // Fetch user data from the server
-    fetch(`https://berryscan.tech/api/user/update`, requestOptions)
+    fetch(`http://localhost:8080/api/user/update`, requestOptions)
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -90,7 +90,7 @@ function logout() {
         redirect: 'follow'
     };
 
-    fetch("https://berryscan.tech/api/logout/"+userTokenData.userId, requestOptions)
+    fetch("http://localhost:8080/api/logout/"+userTokenData.userId, requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);

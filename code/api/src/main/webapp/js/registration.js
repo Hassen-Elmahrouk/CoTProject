@@ -28,7 +28,7 @@ async function registerUser(event) {
       redirect: 'follow'
     };
 
-    const response = await fetch("https://api.berryscan.tech/api/signup", requestOptions);
+    const response = await fetch("https://berryscan.tech/api/signup", requestOptions);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
