@@ -1,0 +1,138 @@
+/* colours */
+:root{
+  --primary: #ffd2d2;
+  --secondary: #ffc4ce;
+  --title: #ff1616;
+}
+
+
+/* layout styles */
+nav{
+  background: var(--primary);
+  border-bottom: 10px solid var(--secondary);
+}
+nav a{
+  text-transform: uppercase;
+  color: var(--title);
+}
+nav a span{
+  font-weight: bold;
+}
+nav .sidenav-trigger{
+  margin: 0;
+}
+
+/* recipe styles */
+.recipes{
+  margin-top: 20px;
+}
+.card-panel.recipe{
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
+  display: grid;
+  grid-template-columns: 2fr 6fr 1fr;
+  grid-template-areas: "image details delete";
+  position: relative;
+}
+.recipe img{
+  grid-area: image;
+  max-width: 60px;
+}
+.recipe-details{
+  grid-area: details;
+  margin-top: 6px;
+}
+.recipe-delete{
+  grid-area: delete;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.recipe-delete i{
+  font-size: 18px;
+}
+.recipe-title{
+  font-weight: bold;
+}
+.recipe-ingredients{
+  font-size: 0.8em;
+}
+
+/* form-styles */
+.add-btn{
+  background: var(--title) !important;
+}
+input{
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+.side-form button{
+  background: var(--title);
+  box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
+}
+form .input-field{
+  margin-top: 30px;
+}
+#map { height: 350px;
+}
+#showMore{
+text-align: center; 
+cursor: pointer;
+}
+#showMore:hover {
+text-decoration: underline;
+font-weight: bold;
+}
+
+/* Add these styles to your existing styles.css file */
+
+/* Login form styles */
+#login-form {
+  margin-top: 20px;
+}
+
+#login-form .input-field input {
+  border-bottom: 1px solid var(--title);
+}
+
+#login-form .input-field input:focus {
+  border-bottom: 1px solid var(--title) !important;
+  box-shadow: 0 1px 0 0 var(--title) !important;
+}
+
+#login-form .input-field label {
+  color: var(--title);
+}
+
+#login-form button {
+  background: var(--title) !important;
+}
+
+/* Add any additional styling based on your design preferences */
+
+/* Add these styles to your existing styles.css file */
+
+/* Registration form styles */
+#registration-form {
+  margin-top: 20px;
+}
+
+#registration-form .input-field input {
+  border-bottom: 1px solid var(--title);
+}
+
+#registration-form .input-field input:focus {
+  border-bottom: 1px solid var(--title) !important;
+  box-shadow: 0 1px 0 0 var(--title) !important;
+}
+
+#registration-form .input-field label {
+  color: var(--title);
+}
+
+#registration-form button {
+  background: var(--title) !important;
+}
+
+/* Add any additional styling based on your design preferences */

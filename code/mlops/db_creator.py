@@ -12,10 +12,10 @@ db = client['my_data']
 collection = db['Hous']
 
 # Path to your COCO format file
-file_path = 'C:/deletable/apps/CoTProject/code/mlops/valid/_annotations.coco.json'
+file_path = '~/CoTProject/code/mlops/valid/_annotations.coco.json'
 
 # Path to your coordinates file
-coordinates_file_path = 'C:/deletable/apps/CoTProject/code/mlops/image_coordinates.txt'
+coordinates_file_path = '~/CoTProject/code/mlops/image_coordinates.txt'
 
 # Function to parse coordinates file
 def parse_coordinates(file_path):
@@ -72,7 +72,7 @@ for annotation in data['annotations']:
     
     if image_info:
         image_name = image_info["file_name"]
-        original_image_path = f'C:/deletable/apps/CoTProject/code/mlops/valid/{image_name}'
+        original_image_path = f'~/CoTProject/code/mlops/valid/{image_name}'
         label = next((cat['name'] for cat in data['categories'] if cat["id"] == annotation['category_id']), None)
 
         # Draw bounding box and label on image
@@ -93,7 +93,7 @@ for annotation in data['annotations']:
         }
         documents.append(document)
         i += 1
-        if i == 5:
+        if i == 20:
             break
 
 # Insert documents into the collection

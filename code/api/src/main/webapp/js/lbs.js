@@ -29,7 +29,7 @@ function onLocationFound(e) {
 map.on('locationfound', onLocationFound);
 
 // Fetch data from your API
-fetch("https://api.berryscan.tech/api/getAnnotations", {
+fetch("https://berryscan.tech/api/getAnnotations", {
     method: 'GET',
     headers: {
         'Authorization': `Bearer ${TokenData.accessToken}`,  // Replace with your actual token

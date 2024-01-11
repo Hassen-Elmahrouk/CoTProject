@@ -6,97 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bdefa52f-93b3-4eb9-859e-e3625ed89fb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/supcom/boundaries/UserResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/supcom/boundaries/UserResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/supcom/filters/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/supcom/filters/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/boundaries/UserResources.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/boundaries/UserResources.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/exceptions/UserForbiddenExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/exceptions/UserForbiddenExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/exceptions/UserNotAuthorizedExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/exceptions/UserNotAuthorizedExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/filters/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/filters/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/filters/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/filters/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/models/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/AccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/AccessToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/GrantType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/GrantType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Oauth2Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Oauth2Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Oauth2Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Oauth2Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/RefreshToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/RefreshToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/SecurityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/SecurityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/UserJWT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/UserJWT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/UserToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/security/UserToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/services/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/util/BeanValConstrainViolationExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/util/BeanValConstrainViolationExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/util/MongoDBIdentity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/WEB-INF/classes/tn/supcom/util/MongoDBIdentity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/js/authentification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/js/db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/js/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/js/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/js/ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/js/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/fallback.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/fallback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/pages/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/pages/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-0.0/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-0.0/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/boundaries/UserResources.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/boundaries/UserResources.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/exceptions/UserForbiddenExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/exceptions/UserForbiddenExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/exceptions/UserNotAuthorizedExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/exceptions/UserNotAuthorizedExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/filters/AuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/filters/AuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/filters/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/filters/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/models/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/AccessToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/AccessToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/GrantType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/GrantType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/Oauth2Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/Oauth2Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/Oauth2Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/Oauth2Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/RefreshToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/RefreshToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/SecurityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/SecurityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/UserJWT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/UserJWT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/security/UserToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/security/UserToken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/services/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/services/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/util/BeanValConstrainViolationExceptionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/util/BeanValConstrainViolationExceptionMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tn/supcom/util/MongoDBIdentity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/supcom/util/MongoDBIdentity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/Data_augmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/Data_augmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/Mask-rcnn.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/Mask-rcnn.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/cloud_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/cloud_storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/dataviz.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/dataviz.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/db_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/db_creator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/delete_folders.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/delete_folders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/generate_test_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/generate_test_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/image_coordinates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/image_coordinates.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/location.txt.dvc" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/location.txt.dvc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/map.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/map_visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/map_visualization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/mask_rcnn_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/mask_rcnn_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/mongodb_saver.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/mongodb_saver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/output_strawberry.dvc" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/output_strawberry.dvc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/output_strawberry_test.dvc" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/output_strawberry_test.dvc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/plot_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/plot_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/predictor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/retrieve_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/retrieve_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/tempate.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/tempate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/train_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/visualize_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/visualize_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +150,7 @@
       <workItem from="1704931672659" duration="282000" />
       <workItem from="1704932188634" duration="1361000" />
       <workItem from="1704955796636" duration="15406000" />
-      <workItem from="1704981859368" duration="6767000" />
+      <workItem from="1704981859368" duration="8949000" />
     </task>
     <servers />
   </component>

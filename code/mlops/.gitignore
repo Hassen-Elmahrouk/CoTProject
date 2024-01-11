@@ -89,4 +89,3 @@ azuredeploy.json
 *.h5
 train/
 output_strawberry/
-
