@@ -6,19 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bdefa52f-93b3-4eb9-859e-e3625ed89fb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/authentification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/lbs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/registration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/berryscan-1.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/authentification.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/authentification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/lbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/lbs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/js/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/berryscan-1.0/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/berryscan-1.0/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mlops/db_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mlops/db_creator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +154,7 @@
       <workItem from="1704931672659" duration="282000" />
       <workItem from="1704932188634" duration="1361000" />
       <workItem from="1704955796636" duration="15406000" />
-      <workItem from="1704981859368" duration="15084000" />
+      <workItem from="1704981859368" duration="17248000" />
     </task>
     <servers />
   </component>
