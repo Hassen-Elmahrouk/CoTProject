@@ -32,8 +32,7 @@ Achievements:
 - Integrated GPS technology for precise mapping and location tracking.
 
 ## Live Demo
-Explore the functionalities of BerryScan by trying out our demo version. Download the `.apk` file from our releases section.
-
+please visit https://berryscan.tech/index.html
 ## Installation Guide
 
 To deploy BerryScan, follow these steps:
@@ -41,18 +40,14 @@ To deploy BerryScan, follow these steps:
 1. Set up on your preferred device (compatible with major operating systems).
 
 2. Install **MongoDB** for database management.
-
-3. Install **Node.js** and **NPM** (Node Package Manager).
-
 4. Clone the Repository: 
    `git clone https://github.com/Houssem-Ben-Salem/CoTProject.git`
 
-5. Navigate to the cloned directory and run `npm install` to install dependencies.
+5. Navigate to CoTProject/code/api  directory and run `mvn clean install` 
 
-6. Launch the application by running `npm start`.
+6. move the war file under wildfly/standalone/deployments
 
-7. Follow the on-screen instructions to connect your robotic system.
-
+7. nivagate to CoTProject/code/mlops , run pip install requirements.txt then  run python3 app.py
 ## Technologies
 BerryScan is built using a variety of technologies for robust and scalable performance:
 - Backend:
