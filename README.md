@@ -68,8 +68,12 @@ BerryScan is built using a variety of technologies for robust and scalable perfo
 - **Disease Detection**: Utilizes AI-based image processing to detect and classify diseases in strawberries.
 - **GPS Mapping**: Accurately maps the location of diseased crops for easy identification and treatment.
 - **User Dashboard**: A comprehensive interface to view, analyze, and manage farm data effectively.
+##Certifications and grading
+We have enabled HTTPS with letsencrypt TLS certificate with HSTS enabled as well, ensuring only secure connections are allowed to the middleware. Enabling TLS1.2 only on Wildfly helps generate A+ grading on SSlabs
+![certificate](https://github.com/Houssem-Ben-Salem/CoTProject/assets/94080018/b8998347-a833-4061-90e7-4fe375eba690)
 
-## Resources
-For further information and resources, visit our [Resource Center](#).
 
-![BerryScan Application Screenshot](./frontend/images/berryscan_screenshot.png)
+## Solution Screenshots:
+![screenshot](https://github.com/Houssem-Ben-Salem/CoTProject/assets/94080018/34c775f7-4adc-4ed1-9519-b73c6cd8ceea)
+
+
