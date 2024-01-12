@@ -62,7 +62,7 @@ BerryScan is built using a variety of technologies for robust and scalable perfo
   - High-Resolution Camera
 
 - Frontend:
-  - React.js (Progressive Web App)
+  - Vanilla js (Progressive Web App)
 
 ## Features
 - **Disease Detection**: Utilizes AI-based image processing to detect and classify diseases in strawberries.
