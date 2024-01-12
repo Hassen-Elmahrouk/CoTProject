@@ -51,9 +51,10 @@ To deploy BerryScan, follow these steps:
 ## Technologies
 BerryScan is built using a variety of technologies for robust and scalable performance:
 - Backend:
-  - Node.js
-  - Express.js
+  - jakarta ee 
+  - flask
   - MongoDB
+  - azure blob storage
 
 - IoT and Robotics:
   - Raspberry Pi (or compatible hardware)
